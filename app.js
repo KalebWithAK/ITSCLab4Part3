@@ -1,5 +1,9 @@
 const Url = "http://18.220.85.60/api/"; //this constant holds the base url for the Microservice API, you will append the API route to this value
 
+if (localStorage.getItem('email')) {
+    $('#email').val(localStorage.getItem('email'));
+}
+
 function fetchProductList() {
 
     jsonObj = [];
@@ -190,7 +194,7 @@ function addToCart($id) {
     let email = $.trim($('#email').val());
 
     if (email != '') {
-        sessionStorage.setItem('email', email);
+        localStorage.setItem('email', email);
     } else {
         alert('Please enter your email at top of page.')
         return;
@@ -220,7 +224,7 @@ function toShoppingCart(){
 
     //email validation
     if ( email != '' ) {
-        sessionStorage.setItem('email', email); //setItem 'email' in sessionStorage to be the user's email. You can access sessionStorage by sessionStorage.getItem().
+        localStorage.setItem('email', email); //setItem 'email' in localStorage to be the user's email. You can access localStorage by localStorage.getItem().
         window.location.href = './cart.html'; //redirect to the shopping cart page
     } else {
         alert("Please enter your email at top of page."); //alert user since email is empty

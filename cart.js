@@ -1,10 +1,9 @@
-
 let list;
 let listAdd;
 let itemCount;
 let totalPrice;
 
-let email = sessionStorage.getItem('email'); //gets the users email from sessionStorage
+let email = localStorage.getItem('email'); //gets the users email from localStorage
 
 getCart(email);
 
