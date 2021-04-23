@@ -4,6 +4,12 @@ if (localStorage.getItem('email')) {
     $('#email').val(localStorage.getItem('email'));
 }
 
+// When the page loads, load a default product list
+$(function() {
+    fetchProductList();
+    console.log("Hello!");
+});
+
 function fetchProductList() {
 
     jsonObj = [];
